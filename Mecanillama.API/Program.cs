@@ -87,7 +87,7 @@ builder.Services.AddSwaggerGen(options =>
 
 //var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-var connectionString = builder.Configuration.GetConnectionString("WebApiDatabase");
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // Database Connection with Standard Level for Information and Errors
 
@@ -131,6 +131,9 @@ using (var context = scope.ServiceProvider.GetService<AppDbContext>())
 {
     context.Database.EnsureCreated();
 }
+
+// SpecfLow stuff
+
 
 // Configure the HTTP request pipeline.
 
