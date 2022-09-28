@@ -1,0 +1,14 @@
+Index: Mecanillama.Specs/LosPasos.cs
+===================================================================
+diff --git a/Mecanillama.Specs/LosPasos.cs b/Mecanillama.Specs/LosPasos.cs
+--- a/Mecanillama.Specs/LosPasos.cs	
++++ b/Mecanillama.Specs/LosPasos.cs	
+@@ -20,7 +20,7 @@
+     [Given(@"que quiero un test")]
+     public void GivenQueQuieroUnTest()
+     {
+-        driver.Navigate().GoToUrl("http://localhost:3000/home");
++        driver.Navigate().GoToUrl("https://lively-desert-0c4f9ff10.1.azurestaticapps.net/home");
+         driver.Manage().Window.Size = new System.Drawing.Size(1443, 768);
+     }
+ 
