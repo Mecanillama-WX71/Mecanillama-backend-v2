@@ -87,7 +87,7 @@ builder.Services.AddSwaggerGen(options =>
 
 //var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-var connectionString = builder.Configuration.GetConnectionString("WebApiDatabase");
+var connectionString = builder.Configuration.GetConnectionString("AzureDbConnection");
 
 // Database Connection with Standard Level for Information and Errors
 
