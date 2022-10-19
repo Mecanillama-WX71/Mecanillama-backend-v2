@@ -18,16 +18,17 @@ public class ResourceToModelProfile : Profile
     {
         CreateMap<SaveCustomerResource, Customer>();
         CreateMap<SaveMechanicResource, Mechanic>();
+        CreateMap<UpdateMechanicResource, Mechanic>();
         CreateMap<SaveAppointmentResource, Appointment>();
         CreateMap<SaveReviewResource, Review>();
         CreateMap<RegisterRequest, User>();
 
         CreateMap<UpdateRequest, User>()
             .ForAllMembers(options => options.Condition(
-                (source, target, property) =>
+                (_, _, property) =>
                 {
                     if (property == null) return false;
-                    if (property.GetType() == typeof(string) && string.IsNullOrEmpty((string)property)) return false;
+                    if (property is string && string.IsNullOrEmpty((string)property)) return false;
                     return true;
                 }
             ));

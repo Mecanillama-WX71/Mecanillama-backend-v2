@@ -2,11 +2,11 @@
 
 public static class StringExtensions
 {
-    public static string ToSnakeCase(this string text)
+    public static string ToSnakeCase(this string? text)
     {
-        static IEnumerable<char> Convert(CharEnumerator e)
+        static IEnumerable<char> Convert(CharEnumerator? e)
         {
-            if (!e.MoveNext()) yield break;
+            if (e != null && !e.MoveNext()) yield break;
 
             yield return char.ToLower(e.Current);
 
@@ -23,6 +23,6 @@ public static class StringExtensions
                 }
             }
         }
-        return new string(Convert(text.GetEnumerator()).ToArray()); // CustomerRequest --> customer_request
+        return new string(Convert(text?.GetEnumerator()).ToArray()); // CustomerRequest --> customer_request
     }
 }
