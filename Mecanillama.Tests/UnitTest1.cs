@@ -14,6 +14,7 @@ public class UnitTest1
 
     public UnitTest1()
     {
+        //Todo: Add Service and Mapper
         _controller = new CustomersController(null, null);
     }
 
@@ -22,5 +23,6 @@ public class UnitTest1
     {
         var response = _controller.GetAllSync();
         Assert.NotNull(response);
+        //Todo: Add new Assert
     }
 }

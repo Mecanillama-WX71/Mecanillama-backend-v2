@@ -1,4 +1,5 @@
 using AutoMapper;
+using Mecanillama.API.Appointments.Controllers;
 using Mecanillama.API.Customers.Controllers;
 using Mecanillama.API.Customers.Domain.Services;
 using Mecanillama.API.Customers.Domain.Model;
@@ -10,18 +11,17 @@ namespace Mecanillama.Tests;
 public class UnitTest2
 {
     
-    private readonly CustomersController _controller;
+    private readonly AppointmentsController _controller;
 
     public UnitTest2()
     {
-        _controller = new CustomersController(null, null);
+        _controller = new AppointmentsController(null, null);
     }
 
     [Fact]
-    public Task Test2()
+    public async Task Test2()
     {
-        var response = _controller.GetAllSync();
+        var response = _controller.GetAllAsync();
         Assert.NotNull(response);
-        return Task.CompletedTask;
     }
 }
