@@ -68,7 +68,7 @@ public class AppointmentsController : ControllerBase
         OperationId = "UpdateAppointment")]
     [SwaggerResponse(200, "Appointment updated", typeof(AppointmentResource))]
 
-    [HttpPut("{id}")]
+    [HttpPut("{id:long}")]
     [ProducesResponseType(typeof(AppointmentResource), 200)]
     [ProducesResponseType(typeof(BadRequestResult), 404)]
     public async Task<IActionResult> PutAsync(long id, [FromBody] SaveAppointmentResource resource)
@@ -92,7 +92,7 @@ public class AppointmentsController : ControllerBase
         OperationId = "DeleteAppointment")]
     [SwaggerResponse(200, "Appointment deleted", typeof(AppointmentResource))]
 
-    [HttpDelete("{id}")]
+    [HttpDelete("{id:long}")]
     [ProducesResponseType(typeof(AppointmentResource), 200)]
     [ProducesResponseType(typeof(BadRequestResult), 404)]
     public async Task<IActionResult> DeleteAsync(long id)

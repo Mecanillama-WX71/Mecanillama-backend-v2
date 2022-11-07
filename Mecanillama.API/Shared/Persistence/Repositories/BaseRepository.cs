@@ -5,10 +5,10 @@ namespace Mecanillama.API.Shared.Domain.Repositories;
 
 public class BaseRepository
 {
-    protected readonly AppDbContext _context;
+    protected readonly AppDbContext Context;
 
-    public BaseRepository (AppDbContext context)
+    protected BaseRepository (AppDbContext context)
     {
-        _context = context;
+        Context = context;
     }
 }

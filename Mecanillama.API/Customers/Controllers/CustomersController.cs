@@ -39,7 +39,7 @@ public class CustomersController : ControllerBase {
         OperationId = "GetCustomerById")]
     [SwaggerResponse(200, "Customer returned", typeof(CustomerResource))]
 
-    [HttpGet("{id}")]
+    [HttpGet("{id:long}")]
     [ProducesResponseType(typeof(CustomerResource), 200)]
     [ProducesResponseType(typeof(BadRequestResult), 404)]
     public async Task<IActionResult> GetByIdAsync(long id)
@@ -60,7 +60,7 @@ public class CustomersController : ControllerBase {
         OperationId = "GetCustomerByUserId")]
     [SwaggerResponse(200, "Customer returned", typeof(CustomerResource))]
 
-    [HttpGet("uid/{userId}")]
+    [HttpGet("uid/{userId:long}")]
     [ProducesResponseType(typeof(CustomerResource), 200)]
     [ProducesResponseType(typeof(BadRequestResult), 404)]
     public async Task<IActionResult> GetByUserIdAsync(long userId)
@@ -107,7 +107,7 @@ public class CustomersController : ControllerBase {
         Description = "Update Customer",
         OperationId = "UpdateCustomer")]
     [SwaggerResponse(200, "Customer updated", typeof(CustomerResource))]
-    [HttpPut("{id}")]
+    [HttpPut("{id:int}")]
     [ProducesResponseType(typeof(CustomerResource), 200)]
     public async Task<IActionResult> PutAsync(int id, [FromBody] SaveCustomerResource resource)
     {
@@ -131,7 +131,7 @@ public class CustomersController : ControllerBase {
         Description = "Delete Customer",
         OperationId = "DeleteCustomer")]
     [SwaggerResponse(200, "Customer deleted", typeof(CustomerResource))]
-    [HttpDelete("{id}")]
+    [HttpDelete("{id:long}")]
     public async Task<IActionResult> DeleteAsync(long id)
     {
         var result = await _customerService.DeleteAsync(id);
