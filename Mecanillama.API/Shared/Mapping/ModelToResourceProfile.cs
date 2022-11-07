@@ -11,18 +11,21 @@ using Mecanillama.API.Security.Domain.Models;
 using Mecanillama.API.Security.Domain.Services.Communication;
 using Mecanillama.API.Security.Resources;
 
-namespace Mecanillama.API.Customers.Mapping;
-
-public class ModelToResourceProfile : Profile
+namespace Mecanillama.API.Customers.Mapping
 {
-    public ModelToResourceProfile()
+    public class ModelToResourceProfile : Profile
     {
-        CreateMap<Customer, CustomerResource>();
-        CreateMap<Mechanic, MechanicResource>();
-        CreateMap<Appointment, AppointmentResource>();
-        CreateMap<Review, ReviewResource>();
-        CreateMap<User, AuthenticateResponse>();
-        CreateMap<User, UserResource>();
-    }
+        public ModelToResourceProfile()
+        {
+            CreateMap<Customer, CustomerResource>();
+            CreateMap<Mechanic, MechanicResource>();
+            CreateMap<Mechanic, UpdateMechanicResource>();
+            CreateMap<Appointment, AppointmentResource>();
+            CreateMap<Review, ReviewResource>();
+            CreateMap<User, AuthenticateResponse>();
+            CreateMap<User, UserResource>();
+        
+        }
 
+    }
 }

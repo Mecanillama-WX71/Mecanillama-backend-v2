@@ -67,7 +67,7 @@ public class ReviewsController : ControllerBase
         OperationId = "UpdateReview")]
     [SwaggerResponse(200, "Review updated", typeof(ReviewResource))]
     
-    [HttpPut("{id}")]
+    [HttpPut("{id:int}")]
     public async Task<IActionResult> PutAsync(int id, [FromBody] SaveReviewResource resource)
     {
         if (!ModelState.IsValid)
@@ -90,7 +90,7 @@ public class ReviewsController : ControllerBase
         Description = "Delete Review",
         OperationId = "DeleteReview")]
     [SwaggerResponse(200, "Review deleted", typeof(ReviewResource))]
-    [HttpDelete("{id}")]
+    [HttpDelete("{id:int}")]
     public async Task<IActionResult> DeleteAsync(int id)
     {
         var result = await _reviewService.DeleteAsync(id);

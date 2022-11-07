@@ -9,11 +9,11 @@ public abstract class BaseResponse<T> {
 
     protected BaseResponse(string message) {
         Success = false;
-        Resource = default;
+        Resource = default!;
         Message = message;
     }
 
-    public bool Success { get; set; }
-    public string Message { get; set; }
-    public T Resource { get; set; }
+    public bool Success { get;}
+    public string Message { get;}
+    public T Resource { get;}
 }

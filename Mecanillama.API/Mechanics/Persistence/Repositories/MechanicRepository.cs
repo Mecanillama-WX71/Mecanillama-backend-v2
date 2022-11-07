@@ -1,5 +1,4 @@
-﻿using Mecanillama.API.Appointments.Domain.Repositories;
-using Mecanillama.API.Mechanics.Domain.Models;
+﻿using Mecanillama.API.Mechanics.Domain.Models;
 using Mecanillama.API.Mechanics.Domain.Repositories;
 using Mecanillama.API.Shared.Domain.Repositories;
 using Mecanillama.API.Shared.Persistence.Contexts;
@@ -15,33 +14,33 @@ public class MechanicRepository : BaseRepository, IMechanicRepository
 
     public async Task<IEnumerable<Mechanic>> ListAsync()
     {
-        return await _context.Mechanics.ToListAsync();
+        return await Context.Mechanics.ToListAsync();
     }
 
     public async Task AddAsync(Mechanic mechanic)
     {
-        await _context.Mechanics.AddAsync(mechanic);
+        await Context.Mechanics.AddAsync(mechanic);
     }
 
     public async Task<Mechanic> FindByIdAsync(long id)
     {
-        return await _context.Mechanics.FindAsync(id);
+        return await Context.Mechanics.FindAsync(id);
     }
     
     public async Task<Mechanic> FindByUserIdAsync(long userId)
     {
-        return await _context.Mechanics
+        return await Context.Mechanics
             .Where(p => p.UserId == userId)
             .FirstOrDefaultAsync();
     }
 
     public void Update(Mechanic mechanic)
     {
-        _context.Mechanics.Update(mechanic);
+        Context.Mechanics.Update(mechanic);
     }
 
     public void Remove(Mechanic mechanic)
     {
-        _context.Mechanics.Remove(mechanic);
+        Context.Mechanics.Remove(mechanic);
     }
 }

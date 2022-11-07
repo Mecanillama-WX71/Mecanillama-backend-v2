@@ -40,7 +40,7 @@ public class MechanicsController : ControllerBase
         OperationId = "GetMechanicById")]
     [SwaggerResponse(200, "Mechanic returned", typeof(MechanicResource))]
 
-    [HttpGet("{id}")]
+    [HttpGet("{id:long}")]
     [ProducesResponseType(typeof(MechanicResource), 200)]
     [ProducesResponseType(typeof(BadRequestResult), 404)]
     public async Task<IActionResult> GetByIdAsync(long id)
@@ -61,7 +61,7 @@ public class MechanicsController : ControllerBase
         OperationId = "GetMechanicByUserId")]
     [SwaggerResponse(200, "Mechanic returned", typeof(MechanicResource))]
 
-    [HttpGet("uid/{userId}")]
+    [HttpGet("uid/{userId:long}")]
     [ProducesResponseType(typeof(MechanicResource), 200)]
     [ProducesResponseType(typeof(BadRequestResult), 404)]
     public async Task<IActionResult> GetByUserIdAsync(long userId)
@@ -109,13 +109,20 @@ public class MechanicsController : ControllerBase
         OperationId = "UpdateMechanic")]
     [SwaggerResponse(200, "Mechanic updated", typeof(MechanicResource))]
     
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutAsync(int id, [FromBody] SaveMechanicResource resource)
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> PutAsync(int id, [FromBody] UpdateMechanicResource resource)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState.GetErrorMessages());
         
-        var mechanic = _mapper.Map<SaveMechanicResource, Mechanic>(resource);
+        var result1 = await _mechanicService.GetByIdAsync(id);
+
+        if (!result1.Success)
+            return BadRequest(result1.Message);
+
+        var mechanicResult = _mapper.Map<Mechanic, MechanicResource>(result1.Resource);
+
+        var mechanic = _mapper.Map<UpdateMechanicResource, Mechanic>(resource);
 
         var result = await _mechanicService.UpdateAsync(id, mechanic);
         
@@ -132,7 +139,7 @@ public class MechanicsController : ControllerBase
         Description = "Delete Mechanic",
         OperationId = "DeleteMechanic")]
     [SwaggerResponse(200, "Mechanic deleted", typeof(MechanicResource))]
-    [HttpDelete("{id}")]
+    [HttpDelete("{id:int}")]
     public async Task<IActionResult> DeleteAsync(int id)
     {
         var result = await _mechanicService.DeleteAsync(id);

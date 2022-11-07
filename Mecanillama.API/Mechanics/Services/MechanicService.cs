@@ -1,5 +1,4 @@
-﻿using Mecanillama.API.Customers.Domain.Repositories;
-using Mecanillama.API.Mechanics.Domain.Models;
+﻿using Mecanillama.API.Mechanics.Domain.Models;
 using Mecanillama.API.Mechanics.Domain.Repositories;
 using Mecanillama.API.Mechanics.Domain.Services;
 using Mecanillama.API.Mechanics.Domain.Services.Communication;

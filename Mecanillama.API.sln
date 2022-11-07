@@ -1,8 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mecanillama.API", "Mecanillama.API\Mecanillama.API.csproj", "{3B8C7BCB-F9E9-411C-BCCB-1A6078569D4D}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mecanillama.API", "Mecanillama.API\Mecanillama.API.csproj", "{3B8C7BCB-F9E9-411C-BCCB-1A6078569D4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mecanillama.Specs", "Mecanillama.Specs\Mecanillama.Specs.csproj", "{7486B867-4E1E-40A1-9E1D-295E1031F5B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mecanillama.Specs", "Mecanillama.Specs\Mecanillama.Specs.csproj", "{7486B867-4E1E-40A1-9E1D-295E1031F5B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mecanillama.ITests", "Mecanillama.ITests\Mecanillama.ITests.csproj", "{FF384463-22BB-47C6-9EBD-66762697B074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mecanillama.Tests", "Mecanillama.Tests\Mecanillama.Tests.csproj", "{13640804-C483-4A5F-B1F3-04FBD2351235}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +25,15 @@ Global
 		{7486B867-4E1E-40A1-9E1D-295E1031F5B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7486B867-4E1E-40A1-9E1D-295E1031F5B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7486B867-4E1E-40A1-9E1D-295E1031F5B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF384463-22BB-47C6-9EBD-66762697B074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF384463-22BB-47C6-9EBD-66762697B074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF384463-22BB-47C6-9EBD-66762697B074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF384463-22BB-47C6-9EBD-66762697B074}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E86E0B5B-D028-4AAD-ADF6-DDC1BC59C347}
 	EndGlobalSection
 EndGlobal

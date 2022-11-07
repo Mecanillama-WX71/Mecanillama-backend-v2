@@ -13,33 +13,33 @@ public class CustomerRepository :BaseRepository, ICustomerRepository
 
     public async Task<IEnumerable<Customer>> ListAsync()
     {
-        return await _context.Customers.ToListAsync();
+        return await Context.Customers.ToListAsync();
     }
 
     public async Task AddAsync(Customer customer)
     {
-        await _context.Customers.AddAsync(customer);
+        await Context.Customers.AddAsync(customer);
     }
 
     public async Task<Customer> FindByIdAsync(long id)
     {
-        return await _context.Customers.FindAsync(id);
+        return await Context.Customers.FindAsync(id);
     }
     
     public async Task<Customer> FindByUserIdAsync(long userId)
     {
-        return await _context.Customers
+        return await Context.Customers
             .Where(p => p.UserId == userId)
             .FirstOrDefaultAsync();
     }
 
     public void Update(Customer customer)
     {
-        _context.Customers.Update(customer);
+        Context.Customers.Update(customer);
     }
 
     public void Remove(Customer customer)
     {
-        _context.Customers.Remove(customer);
+        Context.Customers.Remove(customer);
     }
 }
